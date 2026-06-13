@@ -13,3 +13,4 @@ console.log(accountState) // undefined
 
 //console.table({name, email, accountID})
 console.log("i am ", name)
+console.log(typeof name)
