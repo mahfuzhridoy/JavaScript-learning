@@ -12,3 +12,4 @@ let accountState;
 console.log(accountState) // undefined
 
 //console.table({name, email, accountID})
+console.log("i am ", name)
