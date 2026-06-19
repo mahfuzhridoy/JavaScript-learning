@@ -36,8 +36,11 @@ const gameName = `Find the goat`;
 // //2. toUpperCase(): it converts the string to uppercase.
 // console.log(gameName.toUpperCase());
 
-// console.log(gameName.substring(0, 4)); // output: Find. it returns the part of the string between the start and end index. the end index is not included in the result.
+// //3. console.log(gameName.substring(0, 4)); // output: Find. it returns the part of the string between the start and end index. the end index is not included in the result.
 
-const newString = gameName.slice(-4, 8); // if we add negative index in slice method, it counts from the end of the string. so -1 is the last character of the string, -2 is the second last character of the string and so on. in this case, -4 is the fourth last character of the string which is 'g' and 8 is the index of the character 't'. so it returns 'goat'.
+const newString = gameName.substring(3, 4); // if we add negative index in slice method, it counts from the end of the string. so -1 is the last character of the string, -2 is the second last character of the string and so on. in this case, -4 is the fourth last character of the string which is 'g' and 8 is the index of the character 't'. so it returns 'goat'.
 console.log(newString);
 
+
+
+// 4. 
