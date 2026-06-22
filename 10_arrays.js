@@ -28,7 +28,7 @@ myArr.shift(); // removes first element of the array
 
 
 // console.log(myArr.includes(9)) // returns boolean value saying if the element exists or not.
-// console.log(myArr.indexOf(9)) // returns the index number of the array element.
+// console.log(myArr.indexOf(9)) // returns the index number of the array element. If the element does not found, it returns -1 because, 0 is also an index number. to avoid confusion, it returns -1.
 // console.log(myArr.includes("Hello")) // string searching is case sensitive. the search string must be matched as exact same.
 
 
@@ -49,3 +49,6 @@ console.log(myArr.toString)
  const newarray2 = myArr.splice(1, 5) // the index 5 will be included in this array. We can see it by printing the original array again
  console.log("C ", newarray2)
  console.log(myArr) // output: [0, 9, "hello"]. why? because splice method not only prints but also changes the array.
+
+
+ console.log(myArr.includes("hello"));
