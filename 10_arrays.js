@@ -109,4 +109,4 @@ let v2 = 300;
 let v3 = 400;
 let v4 = "Hello"
 
-console.log(Array.of(v1, v2, v3, v4))  // The of() method insertts the parameters into an array. it returns a new array which includes the elemts of passed values.
+console.log(Array.of(v1, v2, v3, v4))  // The of() method insertts the parameters into an array. it returns a new array which includes the elemts of passed
