@@ -96,7 +96,7 @@ console.log(anotherObject.greeting2())
 
 */
 
-const { use } = require("react")
+//const { use } = require("react")
 
 
 
@@ -153,13 +153,13 @@ const obj2 = {3: "c", 4: "d"}
 
 
 const obj4 = Object.assign({}, obj1, obj2)  // it is always a best practice to enter an empty object ad target. because assign method returns a new object by injecting the sources into the target
-console.log(obj4)
+//console.log(obj4)
 
 
 // Another method of combining or merging with spread operator
 
 const obj5 = {...obj1, ...obj2, ...obj4}
-console.log(obj5)
+//console.log(obj5)
 
 
 
@@ -178,4 +178,14 @@ const user = [
         password: "whatever"
     }
 ]
-user[0].id
+console.log(user[0].id) // accessing a property inside an array of objects. another way of accessing this 
+console.log(user[0]["name"]);  /// Warning! always use "" while accessing a key except when the key is a symbol
+
+/// Another very important method is keys() or values()
+
+console.log(Object.keys(regularUser)) // this will return an array containing keys as the elements of the array. we can add loops here if we want to.
+
+console.log(Object.values(regularUser.fullName.userFullName)); // Another important method is using entries() method
+console.log(Object.entries(regularUser.fullName.userFullName)) // creates an array of entries whch are also represented in array datatype. those arrays store two elemnts, one is the key and another is the value of the key
+
+console.log(regularUser.hasOwnProperty('abc')) /// checks if the object contains any property with the passed key.
