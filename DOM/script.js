@@ -7,6 +7,8 @@ title.style.backgroundColor = 'green'
 title.style.borderRadius = '5px'
 title.style.padding = '4px'
 
+document.getElementById('new-id').getAttribute('id')
+
 //title.innerHTML = "<h1>Testing DOM</h1>" // selects the content as well as html tag elements too
 title.textContent = "IDIOT" // This line of code will change the visible content only. suppose you set a span tag and inside attributes you have made it invisible, then this code will note be able to access it. But innerHTML will be able to do it easily.
 
@@ -23,4 +25,5 @@ document.querySelector('#new-id').style.backgroundColor = 'purple' // css select
 // now query selector all method selects all the html element and returns a node list. this is not an array but have many similarities.
 
 const listItem = document.querySelectorAll('.list')
- 
+
+
