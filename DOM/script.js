@@ -27,3 +27,4 @@ document.querySelector('#new-id').style.backgroundColor = 'purple' // css select
 const listItem = document.querySelectorAll('.list')
 
 
+document.getElementById('another-id').innerText
