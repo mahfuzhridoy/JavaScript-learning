@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Learning</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+    console.log(parent.children); //This will return HTML collection of childrens of parent class. the children is not a variable. it is a keyword to access the childrens of the parents
+    console.log(parent.children[0].innerHTML); // Since the html collection is almost like an array, we can access an element by its index number. then innerHTML keyword to access its content
+
+    
+</script>
+</html>
