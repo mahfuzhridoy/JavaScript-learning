@@ -15,10 +15,37 @@
 </body>
 <script>
     const parent = document.querySelector('.parent')
-    console.log(parent);
-    console.log(parent.children); //This will return HTML collection of childrens of parent class. the children is not a variable. it is a keyword to access the childrens of the parents
-    console.log(parent.children[0].innerHTML); // Since the html collection is almost like an array, we can access an element by its index number. then innerHTML keyword to access its content
+    // console.log(parent);
+    // console.log(parent.children); //This will return HTML collection of childrens of parent class. the children is not a variable. it is a keyword to access the childrens of the parents
+    // console.log(parent.children[0].innerHTML); // Since the html collection is almost like an array, we can access an element by its index number. then innerHTML keyword to access its content
+
+    // console.log(parent.children[0].innerText);
+    
+    // for (let i = 0; i < parent.children.length; i++) {
+    //     console.log(parent.children[i].innerHTML);
+          
+    // } // the html collection also has length property. we can use that in for loop too
+
+    parent.children[1].style.color = 'green' // this will change the color of the second child element
+
+    // console.log(parent.firstElementChild); // selects the first child element of the parent
+    // console.log(parent.lastElementChild); // selects the last child element
+
+
+    // Now how to move to parent element? lets practice it below
+
+    const day = document.querySelector('.day')
+    // console.log(day.innerHTML) 
+
+    // console.log((day.parentElement).innerText); // moving to the parent element of a children
+
+    // console.log(day.nextElementSibling.innerHTML) // this moves to next element of the same level node of the parent tree
+
+    // console.log("Nodes: ", parent.childNodes); // Node list is a complex tree structure. this tree also includes line break as a node. this node is called a text node. browser counts several consecutive line breaks as a single node. if you have put three enters side by side, only one node will be created
 
     
+    
+    
+
 </script>
 </html>
