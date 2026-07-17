@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoM Learning</title>
+</head>
+<body style="background-color: #212121; color: #fff; ">
+    
+</body>
+<script>
+
+    const color = ['red', 'green', 'blue', 'yellow', 'magenta', 'pink', 'brown', '#656321']
+    
+    for (let i = 0; i < 10; i++) {
+        const colorInject = Math.floor(100000 + Math.random() * 900000) 
+        color.push('#' + colorInject)
+        
+    }
+    
+    for (let i = 0; i < color.length; i++) {
+        
+    function createElement(dummyColor){
+    const div = document.createElement('div') // creates a new html element called div
+    console.log(div);
+
+    div.className = 'main' // adding class attribute
+    div.id = 'myId' // adding ID attribute
+    div.id = Math.round(Math.random() * 10 + 1)
+
+    // How to set custom Attribute? Simple! use set attribute method.
+
+    // The setAttribute method is more preferable. Why ? because the process we used earlier with . operator, it firt fetch the attribute from the html element, then overrides it. but the set attribute method directly sets the value inside the element
+    div.setAttribute('title', 'generated title') // the attribute is set to key value pairs
+    div.style.backgroundColor = dummyColor
+    div.style.padding = '10 px'
+    div.style.fontSize = '20 px'
+    div.style.margin = '20 px' 
+
+    // Why isnt it showing anything? there are few reasons
+    // First: we have not written. lets write 
+
+    div.innerText = "Creating element"
+
+    // secodly, we need to append the element 
+
+    document.body.appendChild(div)
+
+    // Now the text is created
+        }
+
+    createElement(color[i]);
+        
+    }    
+</script>
+</html>
