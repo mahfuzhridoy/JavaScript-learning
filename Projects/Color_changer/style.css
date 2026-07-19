@@ -1,0 +1,73 @@
+div.header-style {
+    margin: 20px;
+    padding: 10px;
+    text-align: center; 
+    font-size: 20px; 
+    background-color: antiquewhite; 
+    box-shadow: -5px 5px 0px grey;
+    border-radius: 10px;
+}
+
+button#blue {
+    margin-left: 20px;
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 20px;
+    /* align-items: center;
+    align-content: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: blue;
+    color: yellow;
+    
+}
+
+button#aqua {
+    margin-left: 20px;
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 20px;
+    /* align-items: center;
+    align-content: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: aqua;
+    color: grey;
+    
+}
+
+button#green {
+    margin-left: 20px;
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 20px;
+    /* align-items: center;
+    align-content: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: green;
+    color: black;
+    
+}
+
+button#purple {
+    margin-left: 20px;
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 20px;
+    /* align-items: center;
+    align-content: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: purple;
+    color: yellow;
+    
+}
