@@ -21,6 +21,9 @@ button#blue {
     flex-direction: row;
     background-color: blue;
     color: yellow;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
     
 }
 
@@ -37,6 +40,9 @@ button#aqua {
     flex-direction: row;
     background-color: aqua;
     color: grey;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
     
 }
 
@@ -53,6 +59,9 @@ button#green {
     flex-direction: row;
     background-color: green;
     color: black;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
     
 }
 
@@ -69,5 +78,15 @@ button#purple {
     flex-direction: row;
     background-color: purple;
     color: yellow;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    
+}
+
+div.buttons {
+    /* align-items: center; */
+    display: flex;
+    justify-content: center;
     
 }
