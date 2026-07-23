@@ -1,0 +1,42 @@
+.nav-bar{
+    box-shadow: 1px 2px;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    background-color: antiquewhite;
+    /* justify-content: flex-end; moves content to the left inside a parent container */
+}
+
+#heading-text{
+    color: grey;
+    margin-left: 30px;
+}
+
+#nav-buttons{
+    display: flex;
+    /* justify-content: flex-end; */
+    /* justify-self: end; */
+    /* the line below moves selected contet to right  */
+    margin-left: auto; 
+}
+
+#home-button{
+    padding: 10px 8px;
+    margin: 10px;
+    color: grey;
+    background-color: aliceblue;
+    border-radius: 5px;
+    box-shadow: 1px 2px;
+    
+}
+
+#profile-button{
+    
+    padding: 10px 8px;
+    margin: 10px;
+    color: grey;
+    background-color: aliceblue;
+    border-radius: 5px;
+    box-shadow: 1px 2px;
+}
