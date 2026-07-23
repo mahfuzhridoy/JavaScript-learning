@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess</title>
     <link rel="stylesheet" href="game.css">
+    <script src="game.js" defer></script>
 </head>
 <body>
     <nav class="nav-bar">
@@ -14,6 +15,40 @@
         <span id="profile-button">Profile</span>
         </div>
     </nav>
+
+    <div id="guide-message">
+        <span id="guide">Enter your number below</span>
+    </div>
+
+    <!-- Input taking -->
+
+    <div id="input">
+        <input type="text" id="number-input">
+    </div>
+
+    <div id="submit-button">
+        <span id="submit" >Submit</span>
+    </div>
     
+<!-- Display messages -->
+
+    <div>
+        <span id="display-message">
+        
+        </span>
+    </div>
+
+    <div id="info-messages">
+        <span id="guess-array">Your guesses: <span id="guesses"></span></span>
+        <span id="guess-remain">Remaining guesses: <span id="remaining"></span></span>
+    </div>
+
+    <div>
+        <div class="buttons">
+            <button class="button">Restart</button>
+            <button class="button">Quit</button>
+        </div>
+    </div>
+
 </body>
 </html>
