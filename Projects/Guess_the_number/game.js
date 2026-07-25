@@ -1,18 +1,16 @@
 const randomNum = Math.round(Math.random() * 100 + 1)
-// console.log(randomNum)
 // let value = document.querySelector('#number-input').value // This line will provide an empty value, because it immediately executes when the page loads. be careful next time
 const submit = document.querySelector('#submit')
 let display = document.querySelector('#display-message')
 let inputArr = []
 let remaining = 10
-// let play = true
+let play = true
+
+if(play){
 
     submit.addEventListener('click', function(event){
-     console.log("Button clicked");
-    // event.preventDefault()
     let value = document.querySelector('#number-input').value // The value is provided in string data type
     let input = parseInt(value)
-    // console.log(typeof(input))
     if(input < 1 || input > 100){
         display.innerHTML = 'Please enter a valid number of range 1 to 100'
         return;
@@ -22,13 +20,14 @@ let remaining = 10
    
 });
 
+}
+
+
+
  
 
 
 let guessArr = document.getElementById('guesses')
-// guessArr.innerHTML = `${inputArr}`
-
-// document.getElementById('remaining').innerHTML = `${remaining}`
 
 // Compare Function. called inside submit event listener
 
@@ -36,13 +35,20 @@ function compare(input){
 
     remaining --;
     if(input === randomNum){
-        display.innerHTML = "Congratulations Found the number"
+        display.innerHTML = "Congratulations! Found the number"
+
+        document.querySelector('#number-input').setAttribute('disabled', 'true')
+        submit.disabled = true
+
+        play = false
+        return;
     } 
 
-    if (remaining === 0){
+    if (remaining < 0){
         display.innerHTML = `Game Over! The number was ${randomNum}`
         document.querySelector('#number-input').setAttribute('disabled', 'true')
         submit.disabled = true
+        play = false
         return; // Very Important. If you dont return then the game over will be immediately overwritten
     }
     document.getElementById('remaining').innerHTML = `${remaining}`
@@ -56,24 +62,10 @@ function compare(input){
         inputArr.push(input)
     }
 
-   guessArr.innerHTML = `${inputArr}`
+   guessArr.innerHTML = `${inputArr}, `
 
-    // loopRunner(remaining);
 }
 
-// Checks the condition until it becomes false
-
-// function loopRunner(remaining){
-//     //
-//     // remaining--;
-//     // if(remaining === 0){
-//     //     play = false
-//     //     display.innerHTML = "Game Over"
-//     // }
-// }
-
-
-// restart button
 
 let restart = document.querySelector('#restart')
 restart.addEventListener('click', function(event){
@@ -100,5 +92,6 @@ function reset(){
     submit.removeAttribute('disabled', 'true')
 
     location.reload()
+    play = true
 
 }
