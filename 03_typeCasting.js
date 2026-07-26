@@ -11,9 +11,9 @@
 // let num1Number = Number(num1);
 // console.log(num1Number) // output: NaN (Not a Number). this is a special value that indicates that the conversion failed because the string cannot be converted to a valid number.
 
-// let num3Number = null;
-// let num2Number = Number(num3Number);
-// console.log(num2Number)
+let num3Number = null;
+let num2Number = Number(num3Number);
+console.log(num2Number) // Output: 0
 
 let booleanValue = true;
 let booleanNumber = Number(booleanValue)
@@ -37,8 +37,8 @@ console.log(num4Float, typeof(num4Float)); // output: 123.45, number
 let num5 = "abc123.45";
 let num5Int = parseInt(num5);
 let num5Float = parseFloat(num5);
-console.log(num5Int, typeof(num5Int)); // output: NaN, number
-console.log(num5Float, typeof(num5Float)); // output: NaN, number
+console.log(num5Int, typeof(num5Int)); // output: NaN, number. because the string is initiated with alphabetic characters.
+console.log(num5Float, typeof(num5Float)); // output: NaN, number. because the string is initiated with alphabetic characters. 
 
 // we can convert values not only to number but also to string, boolean, bigint, symbol, etc. for example, if we try to convert a number to a bigint, we can use the BigInt() function. for example:
 
