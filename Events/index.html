@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body style="background-color: rgb(94, 148, 214); color: rgb(28, 123, 206);">
+
+    <ul style="display: grid; justify-content: center; ; margin: 8px;" id="images">
+        <li><img src="https://images.pexels.com/photos/38692926/pexels-photo-38692926.jpeg?auto=compress" id="fox" style="width: 500px; height: auto;" alt=""></li>
+        <li><img src="https://images.pexels.com/photos/38679229/pexels-photo-38679229.jpeg" id="cat" style="width: 500px; height: auto;" alt=""></li>
+        <li><img src="https://images.pexels.com/photos/38688449/pexels-photo-38688449.jpeg" id="boat" style="width: 500px; height: auto;" alt=""></li>
+        <li><img src="https://images.pexels.com/photos/4719338/pexels-photo-4719338.jpeg" id="wave" style="width: 500px; height: auto;" alt=""></li>
+        <li><img src="https://images.pexels.com/photos/38706222/pexels-photo-38706222.jpeg" id="mountain" style="width: 500px; height: auto;" alt=""></li>
+        <li><img src="https://images.pexels.com/photos/12502565/pexels-photo-12502565.jpeg" id="ocean" style="width: 500px; height: auto;" alt=""></li>
+        <li><img src="https://images.pexels.com/photos/19820292/pexels-photo-19820292.jpeg" id="canal" style="width: 500px; height: auto;" alt=""></li>
+        <li><img src="https://images.pexels.com/photos/38689843/pexels-photo-38689843.jpeg" id="hat" style="width: 500px; height: auto;" alt=""></li>
+        <li><a href="google.com" id="google">Google</a></li>
+    </ul>
+    
+</body>
+<script>
+    // document.getElementById('fox').onclick = function(){
+    //     alert("Fox Clicked")
+    // } // This approach is not appreciated. this gives less features. 
+
+    // document.getElementById('fox').addEventListener('click', function(e){ // Find out more events from MDN docks
+    //     console.log(e.width);  
+    // }, false) // This is by default false. It is event propagation. two context: event capturing, event bubbling. by default it is false which is event bubbling
+
+    // // event capturing code
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul")
+    // }, false)
+
+    // document.getElementById('fox').addEventListener('click', function(e){
+    //     console.log("fox clicked")
+    //     e.stopPropagation() // This stops propagation ad keeps this event separate from the larger events.
+    // }, false) // in this false case, the inner target will be clicked firs and then the outer element will be clicked. But if we had used true value then this would happen in reverse direction. the outer element will be clicked first
+
+    // document.querySelector('#google').addEventListener('click', function(e){
+    //     e.preventDefault()// This prevent default behavior of the selected button.
+    //     console.log('google clicked')
+    //     e.stopPropagation()// stops bubbling up
+    // })
+
+    // type events, timestamp, preventDefault,
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlKey, shiftKey, keyCode
+
+
+
+    // Disappearing an element. if we click an element, the image will disappear
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.parentNode);
+        //e.target.parentNode.remove() // This line of code will remove the item clicked in browser. But a problem, if we click in the bullet point it will delete all elements. Why? because the parent of the bullet point is the <ul> tag. so the entire parent node will disappear including it elements 
+
+        // We can prevent this with some strict check
+
+        if (e.target.tagName === "IMG") {
+             e.target.parentNode.remove() // Now this will remove only images. no problem if we click the ul
+        }
+    })
+
+
+</script>
+</html>

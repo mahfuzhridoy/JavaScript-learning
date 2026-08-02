@@ -34,7 +34,7 @@
 
 // // converting an existing array to a string using join() method.
 
-// const newArray = myArr.join();
+// const newArray = myArr.join(); converts the existing array to a string by combining all elements of that array with specified delimiter
 // // console.log(newArray, typeof(newArray));
 // // console.log(myArr, typeof(myArr));
 // console.log(myArr.toString)
@@ -100,7 +100,7 @@ console.log(realAnotherArray)
 console.log(Array.isArray("Mahfuz"))// checks if the parameter is array or not.
 console.log(Array.from("Mahfuz")) // converts the string or parameter into array, if the parameter is not convertable. then it will return an empty array. for example:
 
-console.log(Array.from({name: "Mahfuz"})) // this will return an empty array, in this case we need ti specify which elements will be converted to array. Is it key or the value
+console.log(Array.from({name: "Mahfuz"})) // this will return an empty array, in this case we need to specify which elements will be converted to array. Is it key or the value
 
 // NOw creating an array from components
 
