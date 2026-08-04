@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="text">Hello World!</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+   const timeout = setTimeout(function(){
+        document.getElementById('text').innerHTML = 'New Text'
+        
+    }, 2000)
+
+
+    // we can aloso clear the timeout
+
+    // we do not need to execute the function. just give reference (name)
+
+    let stopButton = (e) => {
+        clearTimeout(timeout)  // Clears the event
+        console.log('stopped');
+        
+    }
+
+    document.querySelector('#stop').addEventListener('click', stopButton)
+
+// Continuously executes a block of code after interval time
+
+    // setInterval(function(){
+    //     console.log("Hello" + Date.now());
+        
+    // }, 2000)
+</script>
+</html>
