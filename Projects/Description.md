@@ -185,3 +185,68 @@ function reset(){
 }
 
 ```
+
+
+## Project 5
+If start button is pressed, The background color keeps changing
+
+### Solution code
+```javascript
+function color(){
+    let hex = '0123456789abcdef'
+    let col = '#'
+    for (let index = 0; index < 6; index++) {
+        col += hex[Math.floor(Math.random()* 16) ]
+        
+    }
+    console.log(col);
+    
+
+    return col;
+}
+
+let intervalId
+
+function startChangingColor(){
+
+    intervalId = setInterval(colorChanger, 1000)
+    
+    function colorChanger(){
+        document.querySelector('#body').style.backgroundColor = color()
+    }
+    
+}
+
+function stopChangingColor(){
+    clearInterval(intervalId)
+}
+
+document.querySelector('#start').addEventListener('click', startChangingColor)
+document.querySelector('#stop').addEventListener('click', stopChangingColor)
+```
+
+
+## Project 6
+A key logger. if a key is pressed, it is shown at the screen
+
+### Solution code
+```javascript
+const insert = document.querySelector('.insert')
+
+window.addEventListener('keydown', (e) => {
+    insert.innerHTML = `
+<table>
+  <tr>
+    <th>Key</th>
+    <th>Key Code</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td>${e.key === " "? "Space": e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+</table>
+    `
+})
+```
