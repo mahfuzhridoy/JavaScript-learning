@@ -1,0 +1,44 @@
+<!-- API creation -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+ </head>
+ <body>
+    <nav class="nav">
+      <div>Home</div>
+      <div>Profile</div>
+    </nav>
+    <div>
+      <span>Name</span>
+      <span id="showname"></span>
+      <span>Email</span>
+      <span id="showemail"></span>
+    </div>
+
+    <div>
+          Value	State	Description
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+    </div>
+ </body>
+ <script>
+  const xhr = new XMLHttpRequest(); // creating a request object
+  const requestUrl = 'https://api.github.com/users/mahfuzhridoy'
+  xhr.open('GET', requestUrl) // This is opening the request at ready state 1
+  xhr.onreadystatechange = function(){ // continuously tracks the ready state
+    console.log(this.responseText);
+    const data = JSON.parse(this.responseText)
+    document.getElementById('showname').innerHTML = data.login
+    
+  }
+  
+  
+  xhr.send() // Sending the request to the server or other apps
+ </script>
+ </html>

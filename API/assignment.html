@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Profile Card</title>
+	<style>
+		:root{--card-bg:#fff;--accent:#1da1f2;--muted:#6b7280}
+		body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;display:flex;align-items:center;justify-content:center;min-height:100vh;background:linear-gradient(135deg,#eef2ff, #f8fafc)}
+		.card{width:320px;background:var(--card-bg);border-radius:14px;box-shadow:0 8px 30px rgba(2,6,23,0.08);overflow:hidden;border:1px solid rgba(15,23,42,0.05)}
+		.header{height:110px;background:linear-gradient(90deg,rgba(29,161,242,0.12),rgba(99,102,241,0.08));display:flex;align-items:flex-end;padding:16px}
+		.avatar{width:86px;height:86px;border-radius:50%;border:4px solid #fff;box-shadow:0 6px 18px rgba(15,23,42,0.08);object-fit:cover;transform:translateY(26px);background:#fff}
+		.body{padding:36px 20px 20px}
+		.name{font-weight:700;font-size:18px;margin:0}
+		.handle{color:var(--muted);font-size:13px;margin-top:4px}
+		.stats{display:flex;gap:12px;margin-top:14px}
+		.stat{flex:1;background:#f8fafc;border-radius:10px;padding:10px;text-align:center;border:1px solid rgba(15,23,42,0.03)}
+		.stat strong{display:block;font-size:18px}
+		.stat span{font-size:12px;color:var(--muted)}
+		.actions{display:flex;gap:10px;margin-top:16px}
+		.btn{flex:1;padding:10px 12px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+		.btn.follow{background:var(--accent);color:#fff}
+		.btn.message{background:#f3f4f6;color:#0f172a}
+		/* responsive */
+		@media (max-width:360px){.card{width:92%}}
+	</style>
+</head>
+<body>
+	<article class="card" role="article">
+		<div class="header">
+			<img class="avatar" alt="Profile photo">
+		</div>
+		<div class="body">
+			<h3 class="name">Name</h3>
+			<div class="handle">@alexmorg</div>
+
+			<div class="stats">
+				<div class="stat">
+					<strong id="followers">0</strong>
+					<span>Followers</span>
+				</div>
+				<div class="stat">
+					<strong id="following">0</strong>
+					<span>Following</span>
+				</div>
+			</div>
+
+			<div class="actions">
+				<button class="btn follow" id="followBtn">Follow</button>
+				<button class="btn message">Message</button>
+			</div>
+		</div>
+	</article>
+    <button id="show-details" style="" >
+        <span>Show Details</span>
+        <style>
+            #show-details{
+                height: 40px;
+                width: auto;
+                color: #0f172a;
+                background-color: antiquewhite;
+                margin-left: 20px;
+                border-radius: 20px;
+            }
+        </style>
+    </button>
+
+	<script>
+        const xhr = new XMLHttpRequest()
+        const name = document.querySelector('.name')
+        // console.log(name);
+        
+        const photo = document.querySelector('.avatar')
+        const followers = document.querySelector('#followers')
+        const button = document.querySelector('#show-details')
+        const requestUrl = 'https://api.github.com/users/mahfuzhridoy'
+
+
+        button.addEventListener('click', showDetails)
+
+        function showDetails(){
+            xhr.open('GET', requestUrl)
+            xhr.onreadystatechange = function(){
+            
+            if (xhr.readyState === 4) {
+                // Don,t forget this keyword. you will get undefined continuously if you dont fix it
+                const data = JSON.parse(this.responseText) // we should put this line inside the if condition because before the ready state 4 the data is incomplete. we must wait till then before parsing the data
+                name.innerHTML = data.name
+                photo.setAttribute('src', data.avatar_url)
+                followers.innerHTML = data.followers
+            }
+        }
+
+        xhr.send()
+        }
+
+
+
+	</script>
+</body>
+</html>
