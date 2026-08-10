@@ -5,9 +5,9 @@
     // DB calls, cryptography, networkcalls
 
 //     setTimeout(function(){
-//         console.log("Async task is complete", 2000)
+//         console.log("Async task is complete")
 //         resolve() // without this resolve() method the function will not send the response to .then() method thus resulting no consumption of promise
-//     })
+//     }, 2000)
 // })
 
 // .then() methos directly connected with resolve
@@ -74,10 +74,10 @@
 //     setTimeout(function(){
 //         let error = false // for test
 //         if(!error){
-//             resolve({username: "monir", password: "bokachondro"})
+//             resolve({username: "monir", password: "bokachondro"}) // 404 is not an eroor. error only happens if the browser could not send the request. response codes are actually a valid response and will return at resolve
 //         }
 //         else{
-//             reject("ERROR: Somethingwent wrong")
+//             reject("ERROR: Somethingwent wrong") // If browser can not send any request, then it will flag error
 //         }
 //     }, 3000)
 // })
@@ -173,3 +173,8 @@ fetch('https://api.github.com/users/mahfuzhridoy')
 .catch((error) => {
     console.log(error)
 })
+
+
+// More features about fetch()
+
+// read fetch paragraph on mdn docks

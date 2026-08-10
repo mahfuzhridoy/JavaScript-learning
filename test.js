@@ -1,32 +1,16 @@
-const arr = [1,2,3,4,5]
-// const newArr = arr
+const person1 = {
+  name: "Rahim",
+  sayHello: function() {
+    console.log("Hello " + this.name);
+  }
+};
 
-// newArr.unshift(10)
-// newArr.shift()
+const person2 = {
+  name: "Karim",
+  sayHello: function() {
+    console.log("Hello " + this.name);
+  }
+};
 
-// newArr[2] = 10
-// // console.log(arr)
-
-// let myArr = [1,2,3,4]
-
-// myArr = arr.join(" X ")
-// console.log(myArr);
-
-const arr2 = ['hello', 'hi', 'hola']
-
-// const arr3 = 
-// console.log(arr3)
-
-arr2.push(arr)
-// console.log(arr2[3][3]);
-
-console.log(arr2.flat(Infinity))
-
-console.log(Array.isArray("Mahfuz"))
-
-
-const arr3 = Array.from({name: "Mahfuz"})
-console.log(arr3);
-
-
-
+person1.sayHello(); // Hello Rahim
+person2.sayHello(); // Hello Karim
