@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+    <script>
+        // document.getElementById('orange').onclick = function(){
+        //     document.body.style.backgroundColor = `orange`
+        // }
+
+        // document.getElementById('orange').onclick = function(){
+        //     document.body.style.backgroundColor = `orange`
+        // }
+
+        function clic_handler(color){
+            return function(){
+            document.body.style.backgroundColor = `${color}`
+            }
+        }
+        document.getElementById('orange').onclick = clic_handler("orange")
+        document.getElementById('green').onclick = clic_handler("green")
+
+    </script>
+        <script>
+        // function init(){
+        //     let name = "mozilla"
+        //     function dispaly_name(){
+        //         console.log(name);
+                
+        //     }
+        //     // dispaly_name()
+        //     return dispaly_name;
+        // }
+
+        // // init()
+        // const myFunc = init()// The whole lexical scope of display name function is passed through the reference
+        // myFunc()
+        
+
+        // function outer(){
+        //     let username = "Mahfuz"
+        //     function inner(){
+        //         console.log("inner",username);
+                
+        //     }
+        //     inner()
+        // }
+        // outer()
+        // console.log("Outer",username); // Not accessible from outside of function scope
+
+    </script>
+</html>
